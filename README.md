@@ -2,6 +2,8 @@
 
 A responsive weather application that provides current weather information for any city. Users can switch between light and dark modes.
 
+Live at - 'https://randeepraghav.github.io/weather-app/'
+
 ## Table of Contents
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
