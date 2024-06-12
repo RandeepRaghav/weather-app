@@ -1,38 +1,206 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
   text-align: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0,0,0,0.4);
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app:before {
+  content: '';
+  background: url('./assets/sunset.jpg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.app-header {
   background-color: #282c34;
-  min-height: 100vh;
+  padding: 20px;
+  color: white;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+ .app-header h1{
+  font-size: 50px;
+ }
+
+
+
+.search-container {
+  max-width: 500px;
+  height: 60px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 0 1rem;
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255, 0.8);
+  background: rgba(255,255,255, 0.1);
+  color: #f8f8f8;
+}
+
+::placeholder {
+  color: #f8f8f8;
+}
+
+.app-header button {
+  background-color: #61dafb;
+  border: 1px solid rgba(103, 99, 99, 0.8);
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 25px;
+}
+
+.search-container button {
+  padding: 10px;  
+  width: 100px;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255, 0.8);
+  background: rgba(255,255,255, 0.1);
+  color: #f8f8f8;
+  cursor: pointer;
+}
+
+.weather-info {
+  /* margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: inline-block; */
+  display: flex;
+  /* justify-content: space-evenly; */
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 23px;
+  background-color: rgba(255,255,255, 0.2);
+}
+
+.weather-info p {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.error {
+  color: red;
+}
+
+.dark-mode {
+  background-color: #333;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.light {
+  background-color: #fff;
+  color: black;
+  content: '';
+  background: url('./assets/sunset.jpg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -30
+  ;
+  left: 0;
+  z-index: -1;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .search-container {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .search-container button {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    width: 90%;
+    top: 15%;
+  }
+
+  .weather-info {
+    flex-direction: column;
+  }
+
+  .weather-info p {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .app-header {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .search-container input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .weather-info p {
+    font-size: 0.9rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .app-header button {
+    padding: 8px;
+    font-size: 0.9rem;
   }
 }
