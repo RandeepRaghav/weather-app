@@ -4,8 +4,11 @@ A responsive weather application that provides current weather information for a
 
 Live at - 'https://randeepraghav.github.io/weather-app/'
 
+<<<<<<< HEAD
 ![alt text](<Screenshot 2024-06-12 232836.png>)
 
+=======
+>>>>>>> ec2ea8f8dc9bcfbd5c1323f23bbd9bb408496ae1
 ## Table of Contents
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
